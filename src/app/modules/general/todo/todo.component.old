@@ -1,0 +1,45 @@
+//imports
+import { Component, OnInit } from '@angular/core';
+import { Task } from './task';
+
+//déclaration du composant
+@Component({
+  selector: 'app-todo',
+  templateUrl: './todo.component.html',
+  styleUrls: ['./todo.component.scss']
+})
+
+export class TodoComponent implements OnInit {
+
+  //variables (mettre ici les variables "binded" à utiliser pour le template)
+	tasks: Task[];
+	currentTask = "";
+
+  //constructeur
+  constructor() {
+  	this.
+  }
+
+  //appellé à l'initialisation du composant
+  ngOnInit(): void {
+  	this.getTasks();
+  }
+
+  getTasks(): void {
+    this.tasks = [{id:1, title:"Test 1", complete:false}]
+  }
+
+  //méthodes
+  addTask(): void {
+
+  }
+
+  toggleTask(task): void {
+
+  }
+
+  removeTask(task: Task): void {
+
+  }
+
+}

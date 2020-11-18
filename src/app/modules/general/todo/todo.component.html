@@ -1,0 +1,20 @@
+<input [(ngModel)]="currentTask"  type="text" name="txtCurrentTask"/>
+<button type="button" (click)="addTask()">Ajouter</button>
+<table>
+	<tbody>
+	<tr *ngFor="let task of tasks; let i=index">
+		
+		<td *ngIf="task.complete; then thenBlock else elseBlock"></td>
+			<ng-template #thenBlock><strike>{{ task.title }}</strike></ng-template>
+			<ng-template #elseBlock>{{ task.title }}</ng-template>
+		<td>
+			<button type="button" (click)="toggleTask(task)">
+				{{ task.complete ? 'Uncheck' : 'Check' }}
+			</button>
+		</td>
+		<td>
+			<button type="button" (click)="removeTask(task)">Supprimer</button>
+		</td>
+	</tr>
+	</tbody>
+</table>
